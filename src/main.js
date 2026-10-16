@@ -10,7 +10,7 @@ const view = new UserView(controller);
 
 //validamos currentUser en session Storage si no encontramos enviamos a la pagina de loggin
 const isLogin = sessionStorage.getItem('currentUser');
- if (!isLogin){ window.location.href = "../../login.html"};
+ if (!isLogin){ window.location.href = "../login.html"};
 
 await  view.render();
 
