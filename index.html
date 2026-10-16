@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Inventario</title>
+    <link
+      rel="stylesheet"
+      href="styles.css"
+    />
+  </head>
+  <body>
+    <header>
+      <h1
+        id="encabezado"
+        class="encabezado"
+      >
+        ABMC de Usuarios
+      </h1>
+      <nav>
+        <ul>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="#encabezado"
+              >Home</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="#alta"
+              >Alta</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="#consulta"
+              >Consulta</a
+            >
+          </li>
+        </ul>
+        <input
+          type="button"
+          id="endsession"
+          value="Cerrar Sesión"
+        />
+      </nav>
+    </header>
+    <main>
+      <section id="alta">
+        <h2
+          class="titulo"
+          id="titulo"
+        >
+          Alta de productos
+        </h2>
+        <form
+          id="formulario"
+          action="submit"
+          method="post"
+        >
+          <label
+            class="form-label"
+            for="username"
+            >Usuario:</label
+          >
+          <input
+            class="input"
+            type="text"
+            id="username"
+            name="username"
+            placeholder="Ingrese el nombre del usuario"
+            required
+          />
+
+          <label
+            class="form-label"
+            for="nombre"
+            >Nombre:</label
+          >
+          <input
+            class="input"
+            type="text"
+            id="nombre"
+            name="nombre"
+            placeholder="Ingrese el nombre"
+            required
+          />
+
+          <label
+            class="form-label"
+            for="apellido"
+            >Apellido:</label
+          >
+          <input
+            class="input"
+            type="text"
+            id="apellido"
+            name="apellido"
+            placeholder="Ingrese el apellido"
+            required
+          />
+          <label
+            class="form-label"
+            for="DNI"
+            >DNI:</label
+          >
+          <input
+            class="input"
+            type="text"
+            id="DNI"
+            name="DNI"
+            placeholder="Ingrese el DNI"
+            required
+          />
+
+          <label
+            class="form-label"
+            for="rol"
+            >Rol:</label
+          >
+          <select
+            class="input"
+            class="slc-cat"
+            id="rol"
+            name="rol"
+            required
+          >
+            <option value="">Seleccione un rol</option>
+            <option value="1">Administrador</option>
+            <option value="2">Supervisor</option>
+            <option value="3">Usuario</option>
+          </select>
+
+          <input
+            id="agregar"
+            type="submit"
+            value="Agregar"
+          />
+        </form>
+      </section>
+      <section id="consulta">
+        <h2 class="titulo">Consulta de Usuarios</h2>
+        <table class="tabla">
+          <thead>
+            <tr class="tabla-header">
+              <th>ID</th>
+              <th>Nombre de Usuario</th>
+              <th>Nombre</th>
+              <th>Apellido</th>
+              <th>DNI</th>
+              <th>Rol</th>
+              <th>Modificar</th>
+              <th>Eliminar</th>
+            </tr>
+          </thead>
+          <tbody
+            class="tabla-body"
+            id="tabla-usuarios"
+          ></tbody>
+        </table>
+
+        <dialog>
+          <form
+            method="dialog"
+            class="dialog-form"
+          >
+            <h3>Modificar Producto</h3>
+            <label
+              for="musername"
+              class="form-label"
+              >Nombre de Usuario:</label
+            >
+            <input
+              type="text"
+              id="musername"
+              name="modificar_username"
+              class="input"
+              required
+            />
+            <label
+              for="nnombre"
+              class="form-label"
+              >Nombre:</label
+            >
+            <input
+              type="text"
+              id="nnombre"
+              name="modificar_nombre"
+              class="input"
+              required
+            />
+            <label
+              for="napellido"
+              class="form-label"
+              >Apellido:</label
+            >
+            <input
+              type="text"
+              id="napellido"
+              name="modificar_apellido"
+              class="input"
+              required
+            />
+            <label
+              for="nDNI"
+              class="form-label"
+              >DNI:</label
+            >
+            <input
+              type="number"
+              id="nDNI"
+              name="modificar_DNI"
+              class="input"
+              required
+            />
+            <label
+              for="rol"
+              class="form-label"
+              >Rol:</label
+            >
+            <select
+              id="nrol"
+              name="modificar_rol"
+              class="input"
+              class="slc-cat"
+              required
+            >
+              <option value="">Seleccione un rol</option>
+              <option value="1">Administrador</option>
+              <option value="2">Supervisor</option>
+              <option value="3">Usuario</option>
+            </select>
+
+            <div class="dialog-buttons">
+              <button
+                type="submit"
+                id="modificar"
+              >
+                Modificar
+              </button>
+              <button
+                type="button"
+                id="cancelar"
+              >
+                Cancelar
+              </button>
+            </div>
+          </form>
+        </dialog>
+      </section>
+    </main>
+    <script
+      src="src/main.js"
+      type="module"
+    ></script>
+  </body>
+</html>

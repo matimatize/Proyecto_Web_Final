@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <link
+      rel="stylesheet"
+      href="styles.css"
+    />
+    <title>Login</title>
+  </head>
+  <body class="login-body">
+    <h1 class="titulo">Bienvenido al Sistema de Usuarios de Algoritmos II</h1>
+
+    <form
+      action="submit"
+      method="post"
+      id="loginForm"
+    >
+      <label for="username">Usuario:</label>
+      <input
+        type="text"
+        id="username"
+        name="username"
+        required
+        class="input-field"
+      />
+
+      <label for="password">Contraseña:</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        required
+        class="input-field"
+      />
+
+      <button type="submit">Iniciar Sesión</button>
+
+      <div id="passerror"></div>
+    </form>
+
+    <input
+      type="button"
+      name="recuperar"
+      id="recuperar"
+      value="Recuperar Contraseña"
+    />
+
+    <dialog id="errorDialog">
+      <p>coloca la frase de recuperacion</p>
+
+      <form
+        action="submit"
+        method="post"
+        id="recoveryForm"
+      >
+        <label for="rusername">Usuario:</label>
+        <input
+          type="text"
+          id="rusername"
+          name="rusername"
+          required
+          class="input-field"
+        />
+        <label for="recoveryPhrase">DNI:</label>
+        <input
+          type="number"
+          id="recoveryPhrase"
+          name="recoveryPhrase"
+          required
+          class="input-field"
+        />
+        <label for="newpass">Nueva Pass:</label>
+        <input
+          type="text"
+          placeholder="nuevo password"
+          id="newpass"
+          name="nwepass"
+          required
+          class="input-field"
+        />
+        <label for="confirmnewpass">Confirmmar Nueva Pass</label>
+        <input
+          type="text"
+          placeholder="confirmar nuevo password"
+          id="confirmnewpass"
+          name="confirmnewpass"
+          required
+          class="input-field"
+        />
+
+        <button
+          type="submit"
+          id="validar"
+        >
+          Validar
+        </button>
+        <div id="passrrecovery"></div>
+
+        <div id="valerror"></div>
+      </form>
+    </dialog>
+
+    <script
+      src="src/login.js"
+      type="module"
+    ></script>
+  </body>
+</html>
